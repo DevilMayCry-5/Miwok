@@ -6,6 +6,8 @@ public class Word {
     private String mDefaultTranslation;
     private String mMiwokTranslation;
 
+    private static final int NO_IMAGE = -1;
+
     public Word(String DefaultTranslation, String MiwokTranslation, int Image){
         mDefaultTranslation = DefaultTranslation;
         mMiwokTranslation = MiwokTranslation;
@@ -31,5 +33,9 @@ public class Word {
     public String getMiwokTranslation(){
         return mMiwokTranslation;
 
+    }
+
+    public boolean hasImage(){
+        return mImage != NO_IMAGE;
     }
 }
