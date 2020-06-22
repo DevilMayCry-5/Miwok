@@ -2,7 +2,7 @@ package com.example.android.miwok;
 
 public class Word {
 
-    private int mImage;
+    private int mImage = NO_IMAGE;
     private String mDefaultTranslation;
     private String mMiwokTranslation;
 
