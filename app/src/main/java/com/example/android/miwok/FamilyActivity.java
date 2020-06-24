@@ -1,7 +1,10 @@
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -13,10 +16,23 @@ public class FamilyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
+        // Arraylist of sound files
+        final ArrayList<MediaPlayer> sounds = new ArrayList<>();
+
+        sounds.add(MediaPlayer.create(this, R.raw.family_father));
+        sounds.add(MediaPlayer.create(this, R.raw.family_mother));
+        sounds.add(MediaPlayer.create(this, R.raw.family_son));
+        sounds.add(MediaPlayer.create(this, R.raw.family_daughter));
+        sounds.add(MediaPlayer.create(this, R.raw.family_older_brother));
+        sounds.add(MediaPlayer.create(this, R.raw.family_younger_brother));
+        sounds.add(MediaPlayer.create(this, R.raw.family_older_sister));
+        sounds.add(MediaPlayer.create(this, R.raw.family_younger_sister));
+        sounds.add(MediaPlayer.create(this, R.raw.family_grandmother));
+        sounds.add(MediaPlayer.create(this, R.raw.family_grandfather));
+
 
         // create an ArrayList of String type
-//        ArrayList<Word> words = new ArrayList<>();
-        ArrayList<Word> words = new ArrayList<>();
+        final ArrayList<Word> words = new ArrayList<>();
 
         words.add(new Word("father", "әpә", R.drawable.family_father));
         words.add(new Word("mother", "әṭa", R.drawable.family_mother));
@@ -36,6 +52,13 @@ public class FamilyActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.list);
 
         listView.setAdapter(itemsAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                    sounds.get(position).start();
+            }
+        });
 
 
     }
