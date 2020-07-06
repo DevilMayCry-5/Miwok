@@ -7,9 +7,10 @@ android:layout_height="match_parent"
 tools:context=".NumbersActivity"
 android:background="@color/tan_background">
         <ListView
-            android:id="@+id/list"
+            android:id="@+id/list1"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:drawSelectorOnTop="true"
             tools:context="com.example.android.miwok.NumbersActivity"/>
 </android.support.constraint.ConstraintLayout>

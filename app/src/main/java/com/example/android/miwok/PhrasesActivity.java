@@ -56,7 +56,7 @@ public class PhrasesActivity extends AppCompatActivity {
         WordAdapter itemsAdapter;
         itemsAdapter = new WordAdapter(this, words, R.color.category_phrases);
 
-        ListView listView = (ListView) findViewById(R.id.list);
+        ListView listView = (ListView) findViewById(R.id.list1);
 
         listView.setAdapter(itemsAdapter);
 
